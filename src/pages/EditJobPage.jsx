@@ -36,9 +36,13 @@ const EditJobPage = ({ updateJobSubmit }) => {
       },
     };
 
-    updateJobSubmit(updatedJob);
-    toast.success("Job updated successfully");
-    return navigate(`/allJobs/${id}`);
+    try {
+      updateJobSubmit(updatedJob);
+      toast.success("Job updated successfully");
+      navigate(`/allJobs/${id}`);
+    } catch {
+      toast.error("Failed to update job");
+    }
   };
 
   return (

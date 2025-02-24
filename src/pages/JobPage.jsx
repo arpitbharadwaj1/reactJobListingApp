@@ -21,7 +21,7 @@ const JobPage = ({ deleteJob }) => {
       toast.success("Job deleted successfully");
       navigate("/allJobs");
     } catch (error) {
-      toast.error("Failed to add job");
+      toast.error("Failed to delete job");
     }
   };
 
