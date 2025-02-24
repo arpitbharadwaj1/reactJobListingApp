@@ -12,6 +12,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import JobPage, { jobLoader } from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
 import EditJobPage from "./pages/EditJobPage";
+import { HashRouter } from 'react-router-dom';
 
 const App = () => {
   const baseUrl = import.meta.env.VITE_API_BASE_URL || "/api";
@@ -69,7 +70,11 @@ const App = () => {
     )
   );
 
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <HashRouter>
+      <RouterProvider router={router} />
+    </HashRouter>
+  );
 };
 
 export default App;
