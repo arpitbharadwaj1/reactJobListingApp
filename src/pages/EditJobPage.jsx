@@ -19,7 +19,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
   const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
   const { id } = useParams();
 
-  const submitForm = (event) => {
+  const submitForm = async (event) => {
     event.preventDefault();
     const updatedJob = {
       id,
@@ -37,7 +37,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
     };
 
     try {
-      updateJobSubmit(updatedJob);
+      await updateJobSubmit(updatedJob);
       toast.success("Job updated successfully");
       navigate(`/allJobs/${id}`);
     } catch {
