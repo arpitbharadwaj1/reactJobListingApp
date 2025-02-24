@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const JobPage = ({ deleteJob }) => {
+const JobPage = async ({ deleteJob }) => {
   const job = useLoaderData();
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const JobPage = ({ deleteJob }) => {
     }
 
     try {
-      deleteJob(jobId);
+      await deleteJob(jobId);
       toast.success("Job deleted successfully");
       navigate("/allJobs");
     } catch (error) {
