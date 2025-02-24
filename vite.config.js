@@ -10,7 +10,8 @@ export default defineConfig({
         target: 'https://reactjoblistingappservice.onrender.com',
         changeOrigin: true,
         secure: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: (path) => path.replace(/^\/api/, ''),
+        historyApiFallback: true,
       }
     }
   }
