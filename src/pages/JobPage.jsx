@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const JobPage = async ({ deleteJob }) => {
+const JobPage = ({ deleteJob }) => {
   const job = useLoaderData();
   const navigate = useNavigate();
 
